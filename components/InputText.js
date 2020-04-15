@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
         fontFamily: book, 
         borderRadius: hp(2.3), 
         paddingLeft: 8, 
-        fontSize: hp(2.5) 
+        fontSize: hp(2.5),
+        backgroundColor: 'white' 
     },
     buttonContainer: { 
         flexDirection: 'row', 

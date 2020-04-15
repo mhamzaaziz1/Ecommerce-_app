@@ -33,14 +33,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#F9AC19',
-        alignItems: 'center'
     },
     logoImgContainer: {
-        marginTop: hp('10%') 
+        marginTop: hp('10%'),
+        alignSelf: 'center' 
     },
     imgContainer: { 
         marginTop: hp('42%'),
-        marginBottom: hp('5%')
+        marginBottom: hp('5%'),
+        marginLeft: wp(6)
     },
 });
 

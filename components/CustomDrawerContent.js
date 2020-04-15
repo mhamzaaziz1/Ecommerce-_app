@@ -4,13 +4,14 @@ import { Container, Content, Header, Body } from 'native-base';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 
-
 const medium = 'AirbnbCerealMedium';
 
 const CustomDrawerContent = (props) => {
     const [active1, sectActive1] = useState(false);
     const [active2, sectActive2] = useState(false);
     const [active3, sectActive3] = useState(false);
+
+    console.log(wp('25%'));
 
     return (
         <DrawerContentScrollView>
@@ -37,23 +38,6 @@ const CustomDrawerContent = (props) => {
                 <Content>
                         <DrawerItemList {...props} />
                 </Content>
-                {/* <DrawerItem
-                    label="For Query Contact"
-                    onPress={() => {
-                        sectActive1(true);
-                        props.navigation.navigate('queryContact')
-                    }}
-                    focused={active1}
-                    activeTintColor='black'
-                />
-                <DrawerItem
-                    label="Administration"
-                    onPress={() => {
-                        setActive2(true)
-                        props.navigation.navigate('administration')}}
-                    focused={active2}
-                    activeTintColor='black'
-                /> */}
                 <DrawerItem
                     label="Log out"
                     onPress={() => {console.log('logout')}}
@@ -76,10 +60,10 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between' 
     },
     imgContainer: { 
-        marginLeft: wp(-1), 
-        width: wp('25%'),
-        height: hp('12%'), 
-        borderRadius: hp(10), 
+        marginLeft: -4,
+        width: 90,
+        height: 87,
+        borderRadius: 50, 
         overflow: 'hidden'  
     },
     img: { 
@@ -88,11 +72,13 @@ const styles = StyleSheet.create({
         height: null 
     },
     textContainer: { 
-        height: hp('11%'), 
-        justifyContent: 'space-evenly' 
+        // height: hp('11.5%'), 
+        height: 82.5,
+        justifyContent: 'space-evenly',
+        width: 170 
     },
     text: { 
-        fontSize: hp(2.2), 
+        fontSize: 16, 
         fontFamily: medium 
     }
 });

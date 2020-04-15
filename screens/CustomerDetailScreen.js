@@ -1,10 +1,13 @@
 import React from 'react';
-import { View, StyleSheet, Button, Image } from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import InputPicker from '../components/InputPicker';
 import InputText from '../components/InputText';
 import ScreenHeader from '../components/ScreenHeader';
+
+const medium = 'AirbnbCerealMedium';
+const book = 'AirbnbCerealBook';
 
 const CustomerDetailScreen = ({ navigation }) => {
 
@@ -19,7 +22,18 @@ const CustomerDetailScreen = ({ navigation }) => {
                 
                 <View style={styles.subSubContainer}>
                     <View>
-                        <Image source={require('../assets/images/Invoice.png')} />
+                        <Text style={styles.text}>
+                            Invoice ID
+                        </Text>
+                        <Text style={styles.text}>
+                            Invoice Date
+                        </Text>
+                        <Text style={styles.text}>
+                            Due Date
+                        </Text>
+                        <Text style={styles.text}>
+                            Payment Terms
+                        </Text>
                     </View>
 
                     <InputPicker pickerContainer={styles.pickerContainer} pickerStyle={styles.picker} />
@@ -28,8 +42,10 @@ const CustomerDetailScreen = ({ navigation }) => {
 
                 <InputText />
 
+                <TouchableOpacity onPress={() => navigation.navigate('productDetail')} style={styles.navigationButton}>
+                    <Image source={require('../assets/images/preview.png')} />
+                </TouchableOpacity>
             </View>
-            <Button title='cjzj' onPress={() => navigation.navigate('productDetail')} />
         </View>
     );
 };
@@ -41,11 +57,16 @@ const styles = StyleSheet.create({
     },
     subContainer: { 
         alignItems: 'center', 
-        backgroundColor: '#D9D9D9',
+        backgroundColor: '#F0F0F0',
         flex: 1 
     },
     subContainerImg: { 
         marginTop: hp(4) 
+    },
+    text: {
+        fontSize: hp(2.65), 
+        fontFamily: medium, 
+        fontWeight: 'bold' 
     },
     subSubContainer: { 
         marginTop: hp(2), 
@@ -54,8 +75,8 @@ const styles = StyleSheet.create({
         width: wp('85%') 
     },
     pickerContainer: { 
-        width: wp(35), 
-        marginTop: hp(14.2), 
+        width: wp(35),  
+        marginTop: hp(10.5), 
         marginRight: hp(-1) 
     },
     picker: { 
@@ -65,6 +86,11 @@ const styles = StyleSheet.create({
         height: hp(3.8), 
         justifyContent: 'center',
         backgroundColor: 'white' 
+    },
+    navigationButton: {
+        bottom : hp(2.5),
+        position: 'absolute',
+        right: wp(3),
     }
 });
 

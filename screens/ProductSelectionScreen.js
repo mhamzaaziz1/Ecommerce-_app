@@ -19,7 +19,7 @@ const ProductSelectionScreen = ({ navigation }) => {
                     <Header style={styles.header}>
                         <StatusBar backgroundColor='white' barStyle='dark-content' />
                         <View style={styles.headerContainer}>
-                            <TouchableOpacity style={styles.icon}>
+                            <TouchableOpacity onPress={() => navigation.goBack()} style={styles.icon}>
                                 <FontAwesome5 name='less-than' size={hp(2.5)} />
                             </TouchableOpacity>
                             <View>
@@ -145,7 +145,6 @@ const styles = StyleSheet.create({
         bottom : 20,
         position: 'absolute',
         right: 20,
-        display: 'flex'
     },
     doneButton: { 
         fontFamily: medium, 

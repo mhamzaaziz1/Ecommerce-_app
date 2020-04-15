@@ -19,7 +19,7 @@ const ProductDisplay = ({ searchCardContainer }) => {
                                 <Image source={require('../assets/images/person_image.jpg')} style={styles.img} />
                             </View>
                             <View style={styles.qtyContainer}>
-                                <Text style={styles.qty}>99</Text>
+                                <Text style={styles.qty}>10</Text>
                             </View>
                         </View>
                         <View style={styles.productContainer}>

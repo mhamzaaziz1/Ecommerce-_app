@@ -11,6 +11,10 @@ const SaleScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <ScreenHeader navigation={navigation} />
+
+            <Text style={{ fontSize: hp(4), alignSelf: 'center', marginTop: hp(35), textAlign: 'center'}}>
+                sales mai kn c screen ay gee
+            </Text>
         </View>
     );
 };

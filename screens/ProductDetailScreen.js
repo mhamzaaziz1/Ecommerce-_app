@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import InputPicker from '../components/InputPicker';
-import InputText from '../components/InputText';
 import ScreenHeader from '../components/ScreenHeader';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const medium = 'AirbnbCerealMedium';
 const book = 'AirbnbCerealBook';
@@ -21,7 +19,21 @@ const ProductDetailScreen = ({ navigation }) => {
                 <Image source={require('../assets/images/Product_Detail.png')} style={styles.subContainerImg} />
                 <View style={styles.subSubContainer}>
                     <View>
-                        <Image source={require('../assets/images/warehouse.png')} />
+                        <Text style={styles.text}>
+                            Warehouse
+                        </Text>
+                        <Text style={styles.text}>
+                            Category
+                        </Text>
+                        <Text style={styles.text}>
+                            Tax
+                        </Text>
+                        <Text style={styles.text}>
+                            Discount
+                        </Text>
+                        <Text style={styles.text}>
+                            Invoice Note
+                        </Text>
                     </View>
                     <View style={{ flexDirection: 'column'}}>
                         <InputPicker pickerContainer={styles.pickerContainer} pickerStyle={styles.picker} />
@@ -42,8 +54,16 @@ const ProductDetailScreen = ({ navigation }) => {
                     </Text>
                 </TouchableOpacity>
 
+                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.navigationButtonLeft}>
+                    <Image source={require('../assets/images/previewLeft.png')} />
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => navigation.navigate('productSelection')} style={styles.navigationButton}>
+                    <Image source={require('../assets/images/preview.png')} />
+                </TouchableOpacity>
+
+                
             </View>
-            <Button title='cjzj' onPress={() => navigation.navigate('productSelection')} />
         </View>
     );
 };
@@ -55,11 +75,16 @@ const styles = StyleSheet.create({
     },
     subContainer: { 
         alignItems: 'center', 
-        backgroundColor: '#D9D9D9',
+        backgroundColor: '#F0F0F0',
         flex: 1 
     },
     subContainerImg: { 
         marginTop: hp(4) 
+    },
+    text: {
+        fontSize: hp(2.65), 
+        fontFamily: medium, 
+        fontWeight: 'bold' 
     },
     subSubContainer: { 
         marginTop: hp(2), 
@@ -83,7 +108,7 @@ const styles = StyleSheet.create({
     viewWidth: { 
         borderWidth: .5, 
         width: wp('90%'), 
-        marginTop: hp(.5) 
+        marginTop: hp(1) 
     },
     buttonContainer: { 
         borderColor: '#707070', 
@@ -99,6 +124,16 @@ const styles = StyleSheet.create({
         fontSize: hp(3.5), 
         fontWeight: 'bold', 
         fontFamily: medium 
+    },
+    navigationButtonLeft: {
+        bottom : hp(2.5),
+        position: 'absolute',
+        left: wp(3),
+    },
+    navigationButton: {
+        bottom : hp(2.5),
+        position: 'absolute',
+        right: wp(3),
     }
 });
 

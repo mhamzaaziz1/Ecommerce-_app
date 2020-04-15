@@ -23,14 +23,14 @@ const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
 function MyStack() {
-  return (
-    <Stack.Navigator initialRouteName="customerDetail" headerMode="none">
-        <Stack.Screen name="customerDetail" component={CustomerDetailScreen} options={{ ...TransitionPresets.SlideFromRightIOS, gestureDirection: 'horizontal' }} />
-        <Stack.Screen name="productDetail" component={ProductDetailScreen} options={{ ...TransitionPresets.SlideFromRightIOS, gestureDirection: 'horizontal' }} />
-        <Stack.Screen name="productSelection" component={ProductSelectionScreen} options={{ ...TransitionPresets.SlideFromRightIOS, gestureDirection: 'horizontal' }} />
-        <Stack.Screen name="invoice" component={InvoiceScreen} options={{ ...TransitionPresets.SlideFromRightIOS, gestureDirection: 'horizontal' }} />
-    </Stack.Navigator>
-  );
+    return (
+        <Stack.Navigator initialRouteName="customerDetail" headerMode="none">
+            <Stack.Screen name="customerDetail" component={CustomerDetailScreen} options={{ ...TransitionPresets.SlideFromRightIOS, gestureDirection: 'horizontal' }} />
+            <Stack.Screen name="productDetail" component={ProductDetailScreen} options={{ ...TransitionPresets.SlideFromRightIOS, gestureDirection: 'horizontal' }} />
+            <Stack.Screen name="productSelection" component={ProductSelectionScreen} options={{ ...TransitionPresets.SlideFromRightIOS, gestureDirection: 'horizontal' }} />
+            <Stack.Screen name="invoice" component={InvoiceScreen} options={{ ...TransitionPresets.SlideFromRightIOS, gestureDirection: 'horizontal' }} />
+        </Stack.Navigator>
+    );
 };
 
 function MyDrawer() {
@@ -48,13 +48,13 @@ function MyDrawer() {
             <Drawer.Screen name="Order Placement" component={OrderPlacementScreen} /> 
             <Drawer.Screen name="Payments" component={PaymentScreen} /> 
             <Drawer.Screen name="Subscription" component={SubscriptionScreen} />
-            <Drawer.Screen name="queryContact" component={QueryContact} /> 
+            <Drawer.Screen name="For Query Contact" component={QueryContact} /> 
             <Drawer.Screen name="administration" component={AdministrationScreen} />
         </Drawer.Navigator>
     );
 };
 
-const GujjarNavigator = () => {    
+const GujjarNavigator = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="splash" headerMode="none">

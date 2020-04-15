@@ -11,8 +11,8 @@ const QueryContact = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <ScreenHeader navigation={navigation} />
-            <Text>
-                basjcjascjlas
+            <Text style={{ fontSize: hp(4), alignSelf: 'center', marginTop: hp(35), textAlign: 'center'}}>
+                query contact mai kn c screen ay gee
             </Text>
         </View>
     );
