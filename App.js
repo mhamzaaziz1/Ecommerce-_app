@@ -1,9 +1,10 @@
 import React from 'react';
-import Todo from './Todo';
+import 'react-native-gesture-handler';
+import GujjarNavigator from './navigation/GujjarNavigator';
 
 const App = () => {
   return (
-    <Todo />
+    <GujjarNavigator />
   );
 };
 
