@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, StatusBar } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import ScreenHeader from '../components/ScreenHeader';
 
-const medium = 'AirbnbCerealMedium';
-const book = 'AirbnbCerealBook';
+let width =  Dimensions.get('window').width;
 
 const POSScreen = ({ navigation }) => {
     return (
@@ -17,7 +16,7 @@ const POSScreen = ({ navigation }) => {
                         <Image source={require('../assets/images/dollar_icn.png')} />
                         <Image source={require('../assets/images/Payment.png')} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.posImageContainer}>
+                    <TouchableOpacity onPress={() => navigation.navigate('POS')} style={styles.posImageContainer}>
                         <Image source={require('../assets/images/sale_cal_icn.png')} />
                         <Image source={require('../assets/images/POS.png')} />
                     </TouchableOpacity>
@@ -61,14 +60,14 @@ const styles = StyleSheet.create({
     },
     paymentImageContainer: { 
         justifyContent: 'center', 
-        alignItems: 'center', 
-        marginRight: wp(8),
+        alignItems: 'center',
+        marginRight: width > 500 ? wp(19) : wp(7),
         marginTop: hp(4) 
     },
     posImageContainer: {
         justifyContent: 'center', 
         alignItems: 'center', 
-         marginRight: wp(6), 
+        marginRight: width > 500 ? wp(7) : wp(5), 
         marginTop: hp(-1) 
     },
     salesImageContainer: { 

@@ -8,7 +8,7 @@ import { TextInput } from 'react-native-gesture-handler';
 const medium = 'AirbnbCerealMedium';
 const book = 'AirbnbCerealBook';
 
-const PaymentScreen = ({ navigation }) => {
+const SalePaymentScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <ScreenHeader navigation={navigation} />
@@ -50,10 +50,32 @@ const PaymentScreen = ({ navigation }) => {
                 </View>
 
                 <View style={styles.viewWidth} />
-                
+
+                {/* <View style={{ marginTop: hp(1) }}>
+                    <TouchableOpacity activeOpacity={0.6} style={styles.buttonContainer}>
+                        <Text style={styles.button}>
+                            Add Draft
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity activeOpacity={0.6} style={styles.buttonContainer}>
+                        <Text style={styles.button}>
+                            Payment
+                        </Text>
+
+                    </TouchableOpacity>
+                </View> */}
+                <View style={styles.titleContainer}>
+                    <Text style={styles.titleText}>
+                        Quotation Proposal
+                    </Text>
+                </View>
+
+                <TextInput autoCorrect={false} multiline={true} style={styles.input} />
+
+
                 <TouchableOpacity style={styles.buttonContainer}>
                     <Text style={styles.button}>
-                        Add Payment
+                        Add Order
                     </Text>
                 </TouchableOpacity>
             </View>
@@ -122,7 +144,7 @@ const styles = StyleSheet.create({
         borderRadius: hp(10),
         width: wp(55),
         alignSelf: 'center',
-        marginTop: hp(5) 
+        marginTop: hp(2) 
     },
     button: { 
         fontSize: hp(3.5),
@@ -140,4 +162,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default PaymentScreen;
+export default SalePaymentScreen;

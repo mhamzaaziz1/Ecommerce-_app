@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
+let width =  Dimensions.get('window').width;
 
 const medium = 'AirbnbCerealMedium';
 const book = 'AirbnbCerealBook';
@@ -32,7 +34,7 @@ const InputText = () => {
 
 const styles = StyleSheet.create({
     container: { 
-        marginTop: hp(4) 
+        marginTop: width > 500 ? hp(2.5) : hp(4) 
     },
     input: { 
         borderWidth: 1.1, 
@@ -46,8 +48,9 @@ const styles = StyleSheet.create({
     buttonContainer: { 
         flexDirection: 'row', 
         marginTop: hp(1.5), 
-        width: wp('85%'), 
-        justifyContent: 'space-between' 
+        width: width > 500 ? wp('70%') : wp('85%'), 
+        justifyContent: 'space-between',
+        alignSelf:  'center' 
     },
     button1Container: {
         backgroundColor: '#707070',  

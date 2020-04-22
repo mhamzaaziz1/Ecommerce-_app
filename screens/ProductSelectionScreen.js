@@ -13,7 +13,7 @@ const book = 'AirbnbCerealBook';
 
 const ProductSelectionScreen = ({ navigation }) => {
     return (
-        <View  style={{ flex:1 }}>
+        <View style={{ flex:1, backgroundColor: 'white' }}>
             <ScrollView>
                 <View style={styles.container}>
                     <Header style={styles.header}>
@@ -45,7 +45,7 @@ const ProductSelectionScreen = ({ navigation }) => {
                                             />
                                             <Feather name='search' size= {hp(3)} style={styles.inputSearchBar} />
                                         </View>
-                                        <Image source={require('../assets/images/qrcode.jpg')} />
+                                        <Image source={require('../assets/images/qrcode.jpg')} style={{ marginRight: wp(-2)}} />
                                     </View>
                                 </Body>
                             </CardItem>
@@ -57,7 +57,7 @@ const ProductSelectionScreen = ({ navigation }) => {
                     </View>
                 </View>
             </ScrollView>
-            <TouchableOpacity onPress={() => navigation.navigate('invoice')}  style={styles.doneButtonContainer}>
+            <TouchableOpacity onPress={() => navigation.navigate('productShow')}  style={styles.doneButtonContainer}>
                 <Text style={styles.doneButton}>
                     Done
                 </Text>
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
         marginLeft: -1 , 
         marginTop: -.6, 
         height: hp(13), 
-        justifyContent: 'center' 
+        justifyContent: 'center',
     },
     productCardContainer: { 
         width: wp('101%'), 

@@ -12,7 +12,7 @@ const medium = 'AirbnbCerealMedium';
 const book = 'AirbnbCerealBook';
 
 
-const CustomerDetailScreen = ({ navigation }) => {
+const PaymentCustomerDetailScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
@@ -88,7 +88,7 @@ const CustomerDetailScreen = ({ navigation }) => {
                 </View>
                 
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate('productDetail')} style={styles.navigationButton}>
+            <TouchableOpacity onPress={() => navigation.navigate('payment')} style={styles.navigationButton}>
                     <Image source={require('../assets/images/preview.png')} />
             </TouchableOpacity>
         </View>
@@ -139,4 +139,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default CustomerDetailScreen;
+export default PaymentCustomerDetailScreen;

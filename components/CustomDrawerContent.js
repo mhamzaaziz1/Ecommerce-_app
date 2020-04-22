@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StatusBar, StyleSheet } from 'react-native';
+import { View, Text, Image, StatusBar, StyleSheet, Dimensions } from 'react-native';
 import { Container, Content, Header, Body } from 'native-base';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 
+let width =  Dimensions.get('window').width;
+
 const medium = 'AirbnbCerealMedium';
 
 const CustomDrawerContent = (props) => {
-    const [active1, sectActive1] = useState(false);
-    const [active2, sectActive2] = useState(false);
     const [active3, sectActive3] = useState(false);
-
-    console.log(wp('25%'));
 
     return (
         <DrawerContentScrollView>
@@ -56,11 +54,11 @@ const styles = StyleSheet.create({
         backgroundColor: 'white' 
     },
     body: { 
-        flexDirection: 'row', 
-        justifyContent: 'space-between' 
+        flexDirection: 'row',  
+        justifyContent: width > 500 ? 'space-evenly' : 'space-between'
     },
     imgContainer: { 
-        marginLeft: -4,
+        marginLeft: width > 500 ? 0 : -4,
         width: 90,
         height: 87,
         borderRadius: 50, 
@@ -72,10 +70,8 @@ const styles = StyleSheet.create({
         height: null 
     },
     textContainer: { 
-        // height: hp('11.5%'), 
         height: 82.5,
-        justifyContent: 'space-evenly',
-        width: 170 
+        justifyContent: 'space-between',
     },
     text: { 
         fontSize: 16, 

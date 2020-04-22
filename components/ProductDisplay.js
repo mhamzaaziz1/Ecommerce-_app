@@ -1,9 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, Dimensions } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Card, CardItem, Body } from 'native-base';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
+
+let width =  Dimensions.get('window').width;
 
 const medium = 'AirbnbCerealMedium';
 const book = 'AirbnbCerealBook';
@@ -59,8 +61,8 @@ const ProductDisplay = ({ searchCardContainer }) => {
 const styles = StyleSheet.create({
     imgContainer: { 
         marginLeft: wp(-1), 
-        width: wp('24%'),
-        height: hp('11.5%'), 
+        width: width > 500 ? 110 : wp('24%'),
+        height: width > 500 ? 110 : hp('11.5%'), 
         borderRadius: hp(10), 
         overflow: 'hidden',
         borderWidth: 1,
@@ -105,7 +107,8 @@ const styles = StyleSheet.create({
     },
     totalPrice: {
         marginTop: hp(-.1), 
-        fontFamily: medium 
+        fontFamily: medium,
+        fontSize: hp(2) 
     },
     discountContainer: { 
         flexDirection: 'row' 
@@ -124,7 +127,7 @@ const styles = StyleSheet.create({
         fontFamily: book 
     },
     buttonContainer: { 
-        marginLeft: wp(8), 
+        marginLeft: width > 500 ? wp(20) : wp(8), 
         justifyContent: 'space-between', 
         height: hp(8), 
         marginTop: hp(1.5) 
